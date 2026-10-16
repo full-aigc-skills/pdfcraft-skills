@@ -62,3 +62,7 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 ```
 
 [GitHub 预发布](https://github.com/full-aigc-skills/printcraft-skills/releases/tag/v0.1.0-dev.6)。不捆绑原生二进制、字体或 OCR 模型；需要运行时安装时按技能入口明确执行。
+
+## 场景技能开发候选
+
+已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
