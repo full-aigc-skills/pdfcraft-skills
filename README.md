@@ -14,3 +14,11 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 ```
 
 [Release](https://github.com/full-aigc-skills/printcraft-skills/releases/tag/v0.1.0-dev.6). This is a development prerelease, not full platform or production acceptance.
+
+## 场景技能开发候选
+
+已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
+
+## main交付检查候选
+
+新增[main工具指导](skills/printcraft-pdf-preflight/references/main-workflows.md)：所选页字数、未标记内容定位及7个新增工具/16处契约变化。新增统计/定向检查已通过Windows main专项39008588714；不等于完整无障碍认证，不改变既有中文表单外观限制。
