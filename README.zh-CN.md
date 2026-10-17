@@ -84,4 +84,4 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 | `printcraft-linked-agenda` | 议程与附录双向内部跳转，核对热点和目标页 |
 | `printcraft-revision-compare` | 对照新旧PDF生成文字差异报告，保留两个原件 |
 
-本批为开发分支场景，未进入当前订阅市场v5。当前后端工具缺失时如实报告，不将示例ID、页号和坐标直接套用真实文件。
+本批作为开发候选集成，实际安装版本以市场条目和对应发布标签为准。当前后端工具缺失时如实报告，不将示例ID、页号和坐标直接套用真实文件。
