@@ -22,3 +22,18 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 ## main交付检查候选
 
 新增[main工具指导](skills/printcraft-pdf-preflight/references/main-workflows.md)：所选页字数、未标记内容定位及7个新增工具/16处契约变化。新增统计/定向检查已通过Windows main专项39008588714；不等于完整无障碍认证，不改变既有中文表单外观限制。
+
+## PDF交付场景技能
+
+以下独立技能自带完整步骤、当前原生工具schema、来源固定提交及CLI脚本编译器；不会改动冻结的六个基础技能。命令目录和技术回归不代表所有真实PDF或宿主同步已验收。
+
+| 技能 | 任务与交付 |
+| --- | --- |
+| `printcraft-report-bookmarks` | 按确认章节页建立层级书签，保留原页内容 |
+| `printcraft-review-watermark` | 只给选定审阅页加水印，检查非目标页不变 |
+| `printcraft-invoice-split` | 按确认的单据起始页拆包，逐页核对无丢失与跨单据 |
+| `printcraft-section-pagination` | 前言与正文分别添加可见页脚编号，区分PDF物理页和阅读编号 |
+| `printcraft-linked-agenda` | 议程与附录双向内部跳转，核对热点和目标页 |
+| `printcraft-revision-compare` | 对照新旧PDF生成文字差异报告，保留两个原件 |
+
+本批作为开发候选集成，实际安装版本以市场条目和对应发布标签为准。当前后端工具缺失时如实报告，不将示例ID、页号和坐标直接套用真实文件。
