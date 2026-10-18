@@ -7,13 +7,15 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-DOMAIN=ROOT.name.removesuffix('-skills')
+DOMAIN=json.loads((ROOT/'skill-suite.json').read_text())['domain']
 def fixture(target):
-    target.mkdir();shutil.copytree(ROOT/'skills',target/'skills',ignore=shutil.ignore_patterns('__pycache__','.DS_Store'))
+    target.mkdir();(target/'skills').mkdir()
+    for name in json.loads((ROOT/'skill-suite.json').read_text())['skills']:
+        shutil.copytree(ROOT/'skills'/name,target/'skills'/name,ignore=shutil.ignore_patterns('__pycache__','.DS_Store'))
     module_path=ROOT/'scripts/sync_local_snapshot.py'
     spec=importlib.util.spec_from_file_location('fixture_sync',module_path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
     (target/'plugin.json').write_text(json.dumps({'name':DOMAIN}))
-    (target/'candidate-source.json').write_text(json.dumps({'sourceProject':ROOT.name,'sourceStatus':'local-unpublished-candidate','sourceVersion':'0.1.0-dev.1','releaseTag':None,'skillFileSha256':m.inventory(target/'skills')}))
+    (target/'candidate-source.json').write_text(json.dumps({'sourceProject':json.loads((ROOT/'skill-suite.json').read_text())['repository'].rstrip('/').rsplit('/',1)[-1],'sourceStatus':'local-unpublished-candidate','sourceVersion':'0.1.0-dev.1','releaseTag':None,'skillFileSha256':m.inventory(target/'skills')}))
 
 class SnapshotSyncContract(unittest.TestCase):
     def module(self):

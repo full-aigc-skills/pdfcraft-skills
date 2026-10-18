@@ -1,10 +1,11 @@
 """完整检查原生Schema支持边界，不能由未选中的分支隐藏未知约束。"""
 import importlib.util
+import json
 from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-DOMAIN = ROOT.name.removesuffix('-skills')
+DOMAIN = json.loads((ROOT/'skill-suite.json').read_text())['domain']
 
 class NativeSchemaContract(unittest.TestCase):
     def setUp(self):

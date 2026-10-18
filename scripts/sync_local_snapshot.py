@@ -20,11 +20,13 @@ def inventory(root):
 def sync(plugin):
     """仅对当前领域的未发布且未漂移快照做正常增量复制。"""
     if plugin.is_symlink() or any((plugin/p).is_symlink() for p in ('plugin.json','candidate-source.json','upstream','upstream/skill-suite.json')):raise ValueError('snapshot_metadata_symlink')
-    domain=ROOT.name.removesuffix('-skills')
+    suite=json.loads((ROOT/'skill-suite.json').read_text())
+    domain=suite['domain']
+    source_project=suite['repository'].rstrip('/').rsplit('/',1)[-1]
     metadata=plugin/'candidate-source.json'
     lock=json.loads(metadata.read_text())
     manifest=json.loads((plugin/'plugin.json').read_text())
-    if (manifest['name']!=domain or lock.get('sourceProject')!=ROOT.name or lock.get('sourceStatus')!='local-unpublished-candidate' or lock.get('releaseTag') is not None):raise ValueError('not_current_local_candidate')
+    if (manifest['name']!=domain or lock.get('sourceProject')!=source_project or lock.get('sourceStatus')!='local-unpublished-candidate' or lock.get('releaseTag') is not None):raise ValueError('not_current_local_candidate')
     all_current=inventory(plugin/'skills')
     local={'printcraft-harness'}
     suite=json.loads((ROOT/'skill-suite.json').read_text())
@@ -33,7 +35,7 @@ def sync(plugin):
     if current!=lock['skillFileSha256']:raise ValueError('preserve_modified_plugin_snapshot')
     previous_suite=plugin/'upstream/skill-suite.json'
     if previous_suite.exists() and (hashlib.sha256(previous_suite.read_bytes()).hexdigest()!=lock.get('sourceSuiteSha256') or json.loads(previous_suite.read_text()).get('version')!=lock.get('sourceVersion')):raise ValueError('preserve_modified_source_suite')
-    incoming=inventory(ROOT/'skills')
+    incoming={p:d for p,d in inventory(ROOT/'skills').items() if p.split('/')[0] in suite['skills']}
     if set(current)-set(incoming):raise ValueError('source_removal_requires_review')
     # 完整暂存和二次预检后才发布单文件；拒绝阶段不改原快照。
     with tempfile.TemporaryDirectory(prefix='.snapshot-stage-',dir=plugin) as temporary:

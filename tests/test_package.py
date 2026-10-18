@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-DOMAIN=ROOT.name.removesuffix('-skills')
+DOMAIN=json.loads((ROOT/'skill-suite.json').read_text())['domain']
 
 class PackageContract(unittest.TestCase):
     def test_structure_and_resources(self):
@@ -20,7 +20,7 @@ class PackageContract(unittest.TestCase):
 
     def test_each_skill_gateway_runs_alone_in_python_isolated_mode(self):
         raw=[{'name':'doc_info','input_schema':{'type':'object','properties':{}}}] if DOMAIN=='printcraft' else [{'id':'file.new','label':'New','params':'','menu':['File']}]
-        for entry in sorted((ROOT/'skills').glob('*/SKILL.md')):
+        for entry in [ROOT/'skills'/name/'SKILL.md' for name in json.loads((ROOT/'skill-suite.json').read_text())['skills']]:
             source=entry.parent
             with self.subTest(skill=source.name),tempfile.TemporaryDirectory(prefix='独立 技能 ') as t:
                 root=Path(t);skill=root/source.name;shutil.copytree(source,skill)
