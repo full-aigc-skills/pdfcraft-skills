@@ -7,7 +7,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 class PDFVerification(unittest.TestCase):
     def module(self):
-        spec=importlib.util.spec_from_file_location('verification',ROOT/'skills/printcraft-use/scripts/verification.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+        spec=importlib.util.spec_from_file_location('verification',ROOT/'skills/pdfcraft-use/scripts/verification.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
     def test_missing_empty_corrupt_and_symlink_are_rejected(self):
         v=self.module()
         with tempfile.TemporaryDirectory() as t:

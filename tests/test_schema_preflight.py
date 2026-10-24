@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class SchemaPreflight(unittest.TestCase):
     def test_hidden_unsupported_schema_stops_before_native_edit(self):
-        scripts = ROOT/'skills/printcraft-use/scripts'
+        scripts = ROOT/'skills/pdfcraft-use/scripts'
         spec = importlib.util.spec_from_file_location('gateway', scripts/'command_gateway.py')
         gateway = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(gateway)

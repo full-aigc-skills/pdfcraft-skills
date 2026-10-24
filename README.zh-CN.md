@@ -1,14 +1,14 @@
 # PrintCraft 独立技能
 
-预发布 **0.1.0-dev.6**，固定 `printcraft-cli 0.2.1`，Python 3.11+ / macOS arm64。六项技能可单独复制安装；默认自然语言入口 `printcraft-use`，专业入口显式调用。GitHub 发行身份与发布回执见 project-status.json；该版本用于受控测试。
+预发布 **0.1.0-dev.6**，固定 `printcraft-cli 0.2.1`，Python 3.11+ / macOS arm64。六项技能可单独复制安装；默认自然语言入口 `pdfcraft-use`，专业入口显式调用。GitHub 发行身份与发布回执见 project-status.json；该版本用于受控测试。
 
 | 技能 | 职责 |
 |---|---|
-| printcraft-use | 任务路由、输入登记和交付 |
+| pdfcraft-use | 任务路由、输入登记和交付 |
 | printcraft-cli-setup | 只读诊断与固定安装 |
-| printcraft-cli-inspect | 元数据、文本和预览 |
-| printcraft-cli-pages | 提取、合并、重排、旋转、裁剪 |
-| printcraft-cli-automation | 单会话计划、状态和恢复 |
+| pdfcraft-cli-inspect | 元数据、文本和预览 |
+| pdfcraft-cli-pages | 提取、合并、重排、旋转、裁剪 |
+| pdfcraft-cli-automation | 单会话计划、状态和恢复 |
 | printcraft-cli | 工具 Schema 与专项契约 |
 
 从宿主实际加载的 SKILL.md 确定 `SKILL_DIR`，不要使用开发路径。
@@ -41,7 +41,7 @@ python3 -I -B scripts/check_tool_coverage.py --catalog "$LIVE_CATALOG"
 python3 -I -B tests/native_acceptance.py --runtime-home "$RUNTIME_DIR" --workdir "$NEW_ACCEPTANCE_DIR"
 ```
 
-本地回归与原生验收分别执行。固定制品冷安装、123 项工具发现及原创 PDF 页面/表单/脱敏/签名语义/PDF-A 子集已有实际证据；签名夹具为未受信任自签名，不能报告签名有效。固定原生 OCR 的语言枚举仅支持英语，中文请求仍被原生明确拒绝。新增显式 Tesseract 简繁中文后端，使用契约见 [中文 OCR](skills/printcraft-use/references/ocr.md)；五平台直接原生/英语 OCR 已验证，包装器安装仍仅 macOS arm64，手机真机交付仍开放。真实 ArtCraft → VectorCraft → PrintCraft 本机公开入口及定向返工已经通过，范围见 cross-plugin-2026-10-08.md。完整标准符合性不由子集检查推导。
+本地回归与原生验收分别执行。固定制品冷安装、123 项工具发现及原创 PDF 页面/表单/脱敏/签名语义/PDF-A 子集已有实际证据；签名夹具为未受信任自签名，不能报告签名有效。固定原生 OCR 的语言枚举仅支持英语，中文请求仍被原生明确拒绝。新增显式 Tesseract 简繁中文后端，使用契约见 [中文 OCR](skills/pdfcraft-use/references/ocr.md)；五平台直接原生/英语 OCR 已验证，包装器安装仍仅 macOS arm64，手机真机交付仍开放。真实 ArtCraft → VectorCraft → PrintCraft 本机公开入口及定向返工已经通过，范围见 cross-plugin-2026-10-08.md。完整标准符合性不由子集检查推导。
 
 当前结果及命令见 [实施验收报告](docs/verification/implementation-2026-10-08.md)，源码指纹见 [证据索引](docs/verification/evidence-index.json)。
 
@@ -58,10 +58,10 @@ python3 scripts/sync_local_snapshot.py --plugin-root "$PLUGIN_ROOT"
 ## 预发布安装
 
 ```bash
-npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0-dev.6/skills/printcraft-use
+npx skills add https://github.com/full-aigc-skills/pdfcraft-skills/tree/v0.1.0-dev.6/skills/pdfcraft-use
 ```
 
-[GitHub 预发布](https://github.com/full-aigc-skills/printcraft-skills/releases/tag/v0.1.0-dev.6)。不捆绑原生二进制、字体或 OCR 模型；需要运行时安装时按技能入口明确执行。
+[GitHub 预发布](https://github.com/full-aigc-skills/pdfcraft-skills/releases/tag/v0.1.0-dev.6)。不捆绑原生二进制、字体或 OCR 模型；需要运行时安装时按技能入口明确执行。
 
 ## 场景技能开发候选
 
@@ -69,7 +69,7 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 
 ## main交付检查候选
 
-新增[main工具指导](skills/printcraft-pdf-preflight/references/main-workflows.md)：所选页字数、未标记内容定位及7个新增工具/16处契约变化。新增统计/定向检查已通过Windows main专项39008588714；不等于完整无障碍认证，不改变既有中文表单外观限制。
+新增[main工具指导](skills/pdfcraft-pdf-preflight/references/main-workflows.md)：所选页字数、未标记内容定位及7个新增工具/16处契约变化。新增统计/定向检查已通过Windows main专项39008588714；不等于完整无障碍认证，不改变既有中文表单外观限制。
 
 ## PDF交付场景技能
 
@@ -77,11 +77,11 @@ npx skills add https://github.com/full-aigc-skills/printcraft-skills/tree/v0.1.0
 
 | 技能 | 任务与交付 |
 | --- | --- |
-| `printcraft-report-bookmarks` | 按确认章节页建立层级书签，保留原页内容 |
-| `printcraft-review-watermark` | 只给选定审阅页加水印，检查非目标页不变 |
-| `printcraft-invoice-split` | 按确认的单据起始页拆包，逐页核对无丢失与跨单据 |
-| `printcraft-section-pagination` | 前言与正文分别添加可见页脚编号，区分PDF物理页和阅读编号 |
-| `printcraft-linked-agenda` | 议程与附录双向内部跳转，核对热点和目标页 |
-| `printcraft-revision-compare` | 对照新旧PDF生成文字差异报告，保留两个原件 |
+| `pdfcraft-report-bookmarks` | 按确认章节页建立层级书签，保留原页内容 |
+| `pdfcraft-review-watermark` | 只给选定审阅页加水印，检查非目标页不变 |
+| `pdfcraft-invoice-split` | 按确认的单据起始页拆包，逐页核对无丢失与跨单据 |
+| `pdfcraft-section-pagination` | 前言与正文分别添加可见页脚编号，区分PDF物理页和阅读编号 |
+| `pdfcraft-linked-agenda` | 议程与附录双向内部跳转，核对热点和目标页 |
+| `pdfcraft-revision-compare` | 对照新旧PDF生成文字差异报告，保留两个原件 |
 
 本批作为开发候选集成，实际安装版本以市场条目和对应发布标签为准。当前后端工具缺失时如实报告，不将示例ID、页号和坐标直接套用真实文件。

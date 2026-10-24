@@ -19,7 +19,7 @@ class PackageContract(unittest.TestCase):
         self.assertEqual(module.validate()['skills'],6)
 
     def test_each_skill_gateway_runs_alone_in_python_isolated_mode(self):
-        raw=[{'name':'doc_info','input_schema':{'type':'object','properties':{}}}] if DOMAIN=='printcraft' else [{'id':'file.new','label':'New','params':'','menu':['File']}]
+        raw=[{'name':'doc_info','input_schema':{'type':'object','properties':{}}}] if DOMAIN in ('printcraft','pdfcraft') else [{'id':'file.new','label':'New','params':'','menu':['File']}]
         for entry in [ROOT/'skills'/name/'SKILL.md' for name in json.loads((ROOT/'skill-suite.json').read_text())['skills']]:
             source=entry.parent
             with self.subTest(skill=source.name),tempfile.TemporaryDirectory(prefix='独立 技能 ') as t:

@@ -4,35 +4,35 @@
   "tools": [
     {
       "tool": "doc_open",
-      "owner": "printcraft-cli-automation",
+      "owner": "pdfcraft-cli-automation",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_list",
-      "owner": "printcraft-cli-automation",
+      "owner": "pdfcraft-cli-automation",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_info",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_close",
-      "owner": "printcraft-cli-automation",
+      "owner": "pdfcraft-cli-automation",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_save",
-      "owner": "printcraft-cli-automation",
+      "owner": "pdfcraft-cli-automation",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -46,84 +46,84 @@
     },
     {
       "tool": "page_render",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "text_extract",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "text_find",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_rotate",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_delete",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_move",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_insert_blank",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_insert_file",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_extract",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_combine",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "doc_split",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "bookmark_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -165,14 +165,14 @@
     },
     {
       "tool": "page_number",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "form_fields",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -228,7 +228,7 @@
     },
     {
       "tool": "doc_export_data",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -270,7 +270,7 @@
     },
     {
       "tool": "doc_hidden_info",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -284,7 +284,7 @@
     },
     {
       "tool": "printers",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -298,21 +298,21 @@
     },
     {
       "tool": "content_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_add_text",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_add_image",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -333,7 +333,7 @@
     },
     {
       "tool": "link_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -375,7 +375,7 @@
     },
     {
       "tool": "comment_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -403,7 +403,7 @@
     },
     {
       "tool": "sign_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -417,7 +417,7 @@
     },
     {
       "tool": "sign_keychain_ids",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -494,21 +494,21 @@
     },
     {
       "tool": "page_replace",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_duplicate",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_set_box",
-      "owner": "printcraft-cli-pages",
+      "owner": "pdfcraft-cli-pages",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -550,14 +550,14 @@
     },
     {
       "tool": "accessibility_check",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "accessibility_report",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -571,7 +571,7 @@
     },
     {
       "tool": "accessibility_figures",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -599,7 +599,7 @@
     },
     {
       "tool": "js_document_scripts",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -627,7 +627,7 @@
     },
     {
       "tool": "pdfa_verify",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -641,7 +641,7 @@
     },
     {
       "tool": "action_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -655,7 +655,7 @@
     },
     {
       "tool": "doc_compare",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -683,7 +683,7 @@
     },
     {
       "tool": "form_actions",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -718,7 +718,7 @@
     },
     {
       "tool": "ocr_status",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -767,21 +767,21 @@
     },
     {
       "tool": "doc_audit_space",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "text_lines",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "page_images",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -795,14 +795,14 @@
     },
     {
       "tool": "image_save",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
     },
     {
       "tool": "text_paragraphs",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"
@@ -858,7 +858,7 @@
     },
     {
       "tool": "command_list",
-      "owner": "printcraft-cli-inspect",
+      "owner": "pdfcraft-cli-inspect",
       "scenario": "实时 describe + Schema 预检；具体业务另行验收",
       "evidence": "native-0.2.1-tools.json",
       "businessAcceptance": "NOT_RUN"

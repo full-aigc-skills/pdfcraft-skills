@@ -50,7 +50,7 @@ class IndependentSync(unittest.TestCase):
     def test_normal_sync_keeps_local_harness_and_updates_source_version(self):
         with tempfile.TemporaryDirectory() as t:
             target=Path(t)/'plugin';fixture(target)
-            local=target/'skills/printcraft-harness';local.mkdir();(local/'SKILL.md').write_text('local owned')
+            local=target/'skills/pdfcraft-harness';local.mkdir();(local/'SKILL.md').write_text('local owned')
             module=SnapshotSyncContract().module();result=module.sync(target)
             self.assertEqual(result['snapshot'],'PASS');self.assertEqual((local/'SKILL.md').read_text(),'local owned')
             self.assertEqual(json.loads((target/'candidate-source.json').read_text())['sourceVersion'],json.loads((ROOT/'skill-suite.json').read_text())['version'])
@@ -58,7 +58,7 @@ class IndependentSync(unittest.TestCase):
         for mode in ('removal','foreign'):
             with self.subTest(mode=mode),tempfile.TemporaryDirectory() as t:
                 target=Path(t)/'plugin';fixture(target);m=SnapshotSyncContract().module()
-                path=target/'skills/printcraft-use/scripts/deleted.txt' if mode=='removal' else target/'skills/foreign/SKILL.md';path.parent.mkdir(parents=True,exist_ok=True);path.write_text('keep')
+                path=target/'skills/pdfcraft-use/scripts/deleted.txt' if mode=='removal' else target/'skills/foreign/SKILL.md';path.parent.mkdir(parents=True,exist_ok=True);path.write_text('keep')
                 lockpath=target/'candidate-source.json';lock=json.loads(lockpath.read_text());lock['skillFileSha256']=m.inventory(target/'skills');lockpath.write_text(json.dumps(lock));before=lockpath.read_bytes()
                 with self.assertRaises(ValueError):m.sync(target)
                 self.assertEqual(path.read_text(),'keep');self.assertEqual(lockpath.read_bytes(),before)

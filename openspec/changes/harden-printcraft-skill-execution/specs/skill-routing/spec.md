@@ -6,7 +6,7 @@
 
 ### Requirement: SR-01 唯一路由与职责
 
-系统 SHALL 以 printcraft-use 作为默认自然语言路由入口，cli 管理公共参数契约，setup 管理环境，inspect 管理检查，pages 管理页面组织，automation 管理多步计划；在支持策略的宿主上显式声明隐式路由和专业入口，不覆盖用户指定的技能。
+系统 SHALL 以 pdfcraft-use 作为默认自然语言路由入口，cli 管理公共参数契约，setup 管理环境，inspect 管理检查，pages 管理页面组织，automation 管理多步计划；在支持策略的宿主上显式声明隐式路由和专业入口，不覆盖用户指定的技能。
 
 #### Scenario: 自然语言提取页面
 - **WHEN** 用户要求从 PDF 提取指定页面且未指定技能

@@ -7,9 +7,9 @@ from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1]
 class Diagnostics(unittest.TestCase):
     def test_diagnose_missing_does_not_write_or_download(self):
-        spec=importlib.util.spec_from_file_location('bootstrap',ROOT/'skills/printcraft-use/scripts/bootstrap.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+        spec=importlib.util.spec_from_file_location('bootstrap',ROOT/'skills/pdfcraft-use/scripts/bootstrap.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
         with tempfile.TemporaryDirectory() as t,patch.object(m,'download',side_effect=AssertionError('no download')):
-            path=Path(t)/'missing';lock=json.loads((ROOT/'skills/printcraft-use/scripts/runtime.lock.json').read_text());r=m.diagnose(lock,path,'darwin-arm64')
+            path=Path(t)/'missing';lock=json.loads((ROOT/'skills/pdfcraft-use/scripts/runtime.lock.json').read_text());r=m.diagnose(lock,path,'darwin-arm64')
             self.assertEqual(r['status'],'MISSING');self.assertFalse(path.exists())
     def test_coverage_detects_new_removed_tool(self):
         spec=importlib.util.spec_from_file_location('coverage',ROOT/'scripts/check_tool_coverage.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)

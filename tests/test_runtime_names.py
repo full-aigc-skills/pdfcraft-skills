@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class RuntimeNames(unittest.TestCase):
     def setUp(self):
-        path = ROOT / 'skills/printcraft-use/scripts/bootstrap.py'
+        path = ROOT / 'skills/pdfcraft-use/scripts/bootstrap.py'
         spec = importlib.util.spec_from_file_location('print_bootstrap', path)
         self.bootstrap = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.bootstrap)
@@ -107,7 +107,7 @@ class InstallationBoundaries(unittest.TestCase):
     def test_concurrent_install_uses_one_verified_directory(self):
         import sys,shutil
         with tempfile.TemporaryDirectory() as t:
-            root=Path(t);script=root/'bootstrap.py';shutil.copyfile(ROOT/'skills/printcraft-use/scripts/bootstrap.py',script)
+            root=Path(t);script=root/'bootstrap.py';shutil.copyfile(ROOT/'skills/pdfcraft-use/scripts/bootstrap.py',script)
             artifact='printcraft-cli';content=b'#!/bin/sh\nprintf "printcraft-cli 0.3.0\\n"\n';archive=root/'runtime.zip'
             with zipfile.ZipFile(archive,'w') as z:z.writestr(artifact,content);z.writestr('LICENSE-MIT','Synthetic test fixture')
             lock={'artifact':artifact,'resolvedVersion':'0.3.0','artifacts':{'darwin-arm64':{'url':'https://github.com/storytold/pdfcraft/releases/download/v0.3.0/printcraft-cli-0.3.0-macos-universal.zip','archiveSha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'binarySha256':hashlib.sha256(content).hexdigest(),'versionOutput':'printcraft-cli 0.3.0'}}}

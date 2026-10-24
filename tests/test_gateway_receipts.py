@@ -21,11 +21,11 @@ class ReceiptContract(unittest.TestCase):
         self.g=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.g)
 
     def catalog(self):
-        return [{'name':'doc_info','input_schema':{'type':'object','properties':{}}}] if DOMAIN=='printcraft' else [{'id':'file.new','params':'','menu':[]}]
+        return [{'name':'doc_info','input_schema':{'type':'object','properties':{}}}] if DOMAIN in ('printcraft','pdfcraft') else [{'id':'file.new','params':'','menu':[]}]
 
     def plan(self,root):
         p=root/'plan.json'
-        p.write_text(json.dumps({'domain':DOMAIN,'steps':[{'command':'doc_info' if DOMAIN=='printcraft' else 'file.new','params':{}}]}))
+        p.write_text(json.dumps({'domain':DOMAIN,'steps':[{'command':'doc_info' if DOMAIN in ('printcraft','pdfcraft') else 'file.new','params':{}}]}))
         return p
 
     def invoke(self,argv,side_effect):

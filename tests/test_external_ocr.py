@@ -13,7 +13,7 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'skills/printcraft-use/scripts'
+SCRIPTS = ROOT / 'skills/pdfcraft-use/scripts'
 
 
 def load():

@@ -112,7 +112,7 @@ def receive(args, work):
     report = {'status': 'FAILED', 'scope': 'CROSS_MACHINE_PACKAGE_AND_NATIVE_PDF_ONLY', 'receiver': identity(),
               'mobileDevice': 'NOT_RUN', 'visualReview': 'NOT_RUN', 'producerReexecution': 'NOT_RUN',
               'skillInstaller': 'NOT_RUN_DIRECT_NATIVE_ONLY',
-              'sourceFiles': {relative: sha(ROOT / relative) for relative in ['tests/cross_machine_acceptance.py', 'tests/cross-machine-fixture.json', 'tests/platform_acceptance.py', 'tests/platform-artifacts.json', 'skills/printcraft-use/scripts/verification.py', 'skills/printcraft-use/scripts/commands.py']}}
+              'sourceFiles': {relative: sha(ROOT / relative) for relative in ['tests/cross_machine_acceptance.py', 'tests/cross-machine-fixture.json', 'tests/platform_acceptance.py', 'tests/platform-artifacts.json', 'skills/pdfcraft-use/scripts/verification.py', 'skills/pdfcraft-use/scripts/commands.py']}}
     counter = 0
 
     def command(argv, cwd=None):
@@ -158,7 +158,7 @@ def receive(args, work):
                    'files': [{'path': str(path), 'sha256': sha(path)} for path in paths]}
         handoff_file = work / 'handoff.json'
         handoff_file.write_text(json.dumps(handoff))
-        handoff_result = json.loads(command([sys.executable, '-I', '-B', ROOT / 'skills/printcraft-use/scripts/commands.py', 'handoff', handoff_file, '--producer-version', lock['producerVersion']]))
+        handoff_result = json.loads(command([sys.executable, '-I', '-B', ROOT / 'skills/pdfcraft-use/scripts/commands.py', 'handoff', handoff_file, '--producer-version', lock['producerVersion']]))
         assert handoff_result['status'] == 'HANDOFF_INTEGRITY_PASS'
         report['handoff'] = handoff_result
         platforms = json.loads((ROOT / 'tests/platform-artifacts.json').read_text())

@@ -14,7 +14,7 @@ class PublicHandoff(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);pdf=root/'provided.pdf';pdf.write_bytes(b'%PDF-1.4\n%%EOF')
             request=root/'handoff.json';request.write_text(json.dumps({'protocol':'artcraft.printcraft-handoff/1','producer':'artcraft','producerVersion':'0.1.0-dev.113-runtime.1','files':[{'path':str(pdf),'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest()}]}))
-            command=[sys.executable,'-I','-B',str(ROOT/'skills/printcraft-use/scripts/commands.py'),'handoff',str(request),'--producer-version','0.1.0-dev.113-runtime.1','--runtime-home',str(root/'not-installed')]
+            command=[sys.executable,'-I','-B',str(ROOT/'skills/pdfcraft-use/scripts/commands.py'),'handoff',str(request),'--producer-version','0.1.0-dev.113-runtime.1','--runtime-home',str(root/'not-installed')]
             result=subprocess.run(command,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
             observed=json.loads(result.stdout)

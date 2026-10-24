@@ -25,7 +25,7 @@ def main():
     parser.add_argument('--tesseract', type=Path, required=True)
     parser.add_argument('--tessdata-dir', type=Path, required=True)
     parser.add_argument('--workdir', type=Path, required=True)
-    parser.add_argument('--scripts', type=Path, default=ROOT / 'skills/printcraft-use/scripts')
+    parser.add_argument('--scripts', type=Path, default=ROOT / 'skills/pdfcraft-use/scripts')
     args = parser.parse_args(); work = args.workdir.resolve(); work.mkdir(mode=0o700)
     scripts = args.scripts.resolve()
     report = dict(protocol='printcraft.external-ocr-acceptance/1', cases={}, scope='macOS arm64 explicit external backend, original CC0 two-page scans only',
