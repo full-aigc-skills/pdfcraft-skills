@@ -205,8 +205,8 @@
     ".github/workflows/cross-machine.yml": "8be68637ac964486c954d6c6dc2914d86ac5d181522758878fd6ae6e076665b6",
     ".github/workflows/native-platforms.yml": "7de9be6c2b4d959e31e016822773fd350c0c95ad50e6c2a82044ebc371bde743",
     ".github/workflows/verify.yml": "a7aceb24e24d396805fe304c33eb1c13da51263f080da25b83b7c0234276ab1f",
-    "README.md": "ce4d75bf0094badbd655109405a6fd96f44a6f305fb51ef4341dc1629cebd4ad",
-    "README.zh-CN.md": "2179054e8081a9fca4cd6dfad83c29c1981199b9f0191110b6c5ca694dbe2c99",
+    "README.md": "0c18e62dac290a0d722a2671a1b8d77531d33d810dfd7363c90736ecee87392c",
+    "README.zh-CN.md": "750d661af772cb966c99cbf816ccd888e7daa6f220e953e5f1359c59c3853d37",
     "docs/verification/artifacts/combine.pdf": "8b51d262e44244bbb5e9285fc23f023074bc4b4c1893a1537ec0a9c2975ed92f",
     "docs/verification/artifacts/crop.pdf": "00ef1f2cf775d979541bab430f5745f585563fadf9b3d0c27e13810ac976ff35",
     "docs/verification/artifacts/crop.png": "c00bd21391b2b165715e51935c4bbf3ad06f945dbf1fd9679a55e52adc0441d8",
@@ -499,10 +499,10 @@
     "openspec/changes/harden-printcraft-skill-execution/specs/execution-lifecycle/spec.md": "0f7b131f66c4da7359d66516509267d6ce88d02c4aa3fd8a21af06d97a60ff6f",
     "openspec/changes/harden-printcraft-skill-execution/specs/pdf-delivery-verification/spec.md": "09606beb0dc2a628b5b569ec7e29caf01611e2fbe75bb74d689f6dfe3fc3a22d",
     "openspec/changes/harden-printcraft-skill-execution/specs/runtime-contract/spec.md": "e30ab9a73cde100fde07c215f1e7e2fcd05454084f6a84124ea47390b4453587",
-    "openspec/changes/harden-printcraft-skill-execution/specs/skill-routing/spec.md": "0a9e9e96f48251a9df8ddf444d15a4fccfd78f4b8960fe9ad28d09d97d2a3e06",
+    "openspec/changes/harden-printcraft-skill-execution/specs/skill-routing/spec.md": "8088a4191ed61644137637d188506f94afcbe9792746aff6cc0f988848ada879",
     "openspec/changes/harden-printcraft-skill-execution/tasks.md": "83b31c9ec56966f2e18502122e1995fd119b3e77c007970a45889e55bc9d49ad",
     "openspec/changes/harden-printcraft-skill-execution/verification.md": "6fe7f57c412083cd5716e777fb5c795a7e5c9e390241cbb6c94fd23895493422",
-    "project-status.json": "38f092e3e48e308f38ef6bef214df6e5d3d439973bedd87f5d431b7b838ab54b"
+    "project-status.json": "52d5f3c42be4a8b527dc2ca0f51b50ca485e4fb36a36ba25622140d76dec822d"
   },
   "layers": {
     "localTests": {
