@@ -17,7 +17,7 @@ def sequence(text):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--runtime-home',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True);a=parser.parse_args();a.workdir.mkdir(mode=0o700,parents=True)
-    scripts=ROOT/'skills/printcraft-use/scripts';source=a.workdir/'source.pdf';fixture.make_pdf(source);before=hashlib.sha256(source.read_bytes()).hexdigest()
+    scripts=ROOT/'skills/pdfcraft-use/scripts';source=a.workdir/'source.pdf';fixture.make_pdf(source);before=hashlib.sha256(source.read_bytes()).hexdigest()
     prefix=[sys.executable,'-I','-B',str(scripts/'cli.py'),'--runtime-home',str(a.runtime_home),'--']
     def call(*args):
         r=subprocess.run(prefix+list(args),capture_output=True,text=True,timeout=180)

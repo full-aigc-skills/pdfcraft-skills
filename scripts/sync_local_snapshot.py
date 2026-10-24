@@ -28,7 +28,7 @@ def sync(plugin):
     manifest=json.loads((plugin/'plugin.json').read_text())
     if (manifest['name']!=domain or lock.get('sourceProject')!=source_project or lock.get('sourceStatus')!='local-unpublished-candidate' or lock.get('releaseTag') is not None):raise ValueError('not_current_local_candidate')
     all_current=inventory(plugin/'skills')
-    local={'printcraft-harness'}
+    local={'printcraft-harness','pdfcraft-harness'}
     suite=json.loads((ROOT/'skill-suite.json').read_text())
     if {p.split('/')[0] for p in all_current}-set(suite['skills'])-local:raise ValueError('foreign_plugin_skill')
     current={p:d for p,d in all_current.items() if p.split('/')[0] not in local}

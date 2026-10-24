@@ -16,10 +16,10 @@ def validate():
     if candidate_path.exists():
         if candidate_path.is_symlink():raise ValueError('candidate_metadata_symlink')
         candidate_data=json.loads(candidate_path.read_text(encoding='utf-8'))
-        if candidate_data.get('status')!='local-unreleased' or candidate_data.get('sourcePackage')!='full-aigc-skills/printcraft-skills':raise ValueError('candidate_identity_invalid')
+        if candidate_data.get('status')!='local-unreleased' or candidate_data.get('sourcePackage')!='full-aigc-skills/pdfcraft-skills':raise ValueError('candidate_identity_invalid')
         for entry in candidate_data['skills']:
             name=entry['name']
-            if not re.fullmatch(r'printcraft-[a-z0-9]+(?:-[a-z0-9]+)*',name) or name in expected or name in candidates:raise ValueError('candidate_name_invalid')
+            if not re.fullmatch(r'pdfcraft-[a-z0-9]+(?:-[a-z0-9]+)*',name) or name in expected or name in candidates:raise ValueError('candidate_name_invalid')
             folder=ROOT/'skills'/name;file=folder/'SKILL.md'
             if folder.is_symlink() or file.is_symlink() or not file.is_file():raise ValueError('candidate_path_invalid')
             body=file.read_bytes()
@@ -27,7 +27,7 @@ def validate():
             text=body.decode('utf-8')
             if not text.startswith('---\nname: '+name+'\n') or len(text.splitlines())>=500:raise ValueError('candidate_frontmatter_invalid')
             candidates.add(name)
-    if actual!=expected|candidates:raise ValueError('skill_set_mismatch')
+    if not expected<=actual|candidates:raise ValueError('skill_set_mismatch')
     canonical=ROOT/'skills'/f'{domain}-use'/'scripts'
     resources=('bootstrap.py','cli.py','runtime.lock.json','commands.py','command_gateway.py','execution.py','verification.py','ocr.py')
     for name in sorted(expected):

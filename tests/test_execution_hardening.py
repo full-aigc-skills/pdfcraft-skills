@@ -8,7 +8,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPTS=ROOT/'skills/printcraft-use/scripts'
+SCRIPTS=ROOT/'skills/pdfcraft-use/scripts'
 
 def load(name):
     spec=importlib.util.spec_from_file_location(name,SCRIPTS/(name+'.py'))
@@ -93,7 +93,7 @@ class RealNestedGateway(unittest.TestCase):
             if os.environ.get('PRINTCRAFT_LEGACY_EXIT_ONLY')=='1':
                 # 重建已知旧退出码分支用于红灯证据；不是原 Git 快照，也不改生产源。
                 gateway=scripts/'command_gateway.py';legacy=gateway.read_text().replace('if channel.exists():','if False and channel.exists():').replace("else 'UNKNOWN',phase='legacy-exit'","else 'FAILED_OR_PARTIAL',phase='legacy-exit'");gateway.write_text(legacy)
-            plan=root/'plan.json';plan.write_text('{"domain":"printcraft","steps":[{"command":"doc_info","params":{}}]}')
+            plan=root/'plan.json';plan.write_text('{"domain":"pdfcraft","steps":[{"command":"doc_info","params":{}}]}')
             result=subprocess.run([sys.executable,'-I',str(scripts/'commands.py'),'run',str(plan),'--output',str(root/'task')],capture_output=True,text=True,timeout=10)
             self.assertEqual(result.returncode,1,result.stdout+result.stderr)
             self.assertTrue((root/'task/receipt.json').exists(),result.stdout+result.stderr)

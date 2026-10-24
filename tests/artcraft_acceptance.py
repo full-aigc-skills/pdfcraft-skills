@@ -22,7 +22,7 @@ def main():
     args.workdir=args.workdir.absolute()
     if args.workdir.exists():raise ValueError('new_workdir_required')
     args.workdir.mkdir(mode=0o700)
-    scripts=ROOT/'skills/printcraft-use/scripts'
+    scripts=ROOT/'skills/pdfcraft-use/scripts'
     def invoke(command,timeout=180):
         result=subprocess.run(command,capture_output=True,text=True,timeout=timeout)
         if result.returncode:raise ValueError(result.stdout+result.stderr)

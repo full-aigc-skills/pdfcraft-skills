@@ -25,7 +25,7 @@
     "failed": 0
   },
   "independentCheckout": "PASS_DEV_6_PUBLISHED_ARCHIVE_73_TESTS",
-  "repository": "https://github.com/full-aigc-skills/printcraft-skills",
+  "repository": "https://github.com/full-aigc-skills/pdfcraft-skills",
   "releaseTag": "v0.1.0-dev.6",
   "releaseCommit": "d0085f028232ba27112ad65cd967be150d705bf7",
   "releaseStatus": "PRERELEASE",

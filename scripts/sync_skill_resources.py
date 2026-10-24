@@ -6,7 +6,7 @@ import shutil
 ROOT=Path(__file__).resolve().parents[1]
 RESOURCES=('bootstrap.py','cli.py','commands.py','command_gateway.py','execution.py','verification.py','ocr.py','runtime.lock.json')
 def sync(check=False):
-    suite=json.loads((ROOT/'skill-suite.json').read_text());source=ROOT/'skills/printcraft-use/scripts';drift=[]
+    suite=json.loads((ROOT/'skill-suite.json').read_text());source=ROOT/'skills/pdfcraft-use/scripts';drift=[]
     for name in suite['skills']:
         target=ROOT/'skills'/name/'scripts'
         for filename in RESOURCES:

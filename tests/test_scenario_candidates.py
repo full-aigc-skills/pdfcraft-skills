@@ -12,10 +12,10 @@ spec=importlib.util.spec_from_file_location('print_package_candidates',ROOT/'scr
 class CandidateTests(unittest.TestCase):
     def test_candidate_is_allowed_but_tampered_content_is_rejected(self):
         with tempfile.TemporaryDirectory() as temp:
-            root=Path(temp);folder=root/'skills/printcraft-example';folder.mkdir(parents=True)
+            root=Path(temp);folder=root/'skills/pdfcraft-example';folder.mkdir(parents=True)
             (root/'skill-suite.json').write_text(json.dumps({'domain':'printcraft','skills':[]}))
-            body='---\nname: printcraft-example\ndescription: example\n---\n';(folder/'SKILL.md').write_text(body)
-            (root/'scenario-candidates.json').write_text(json.dumps({'status':'local-unreleased','sourcePackage':'full-aigc-skills/printcraft-skills','skills':[{'name':'printcraft-example','sha256':hashlib.sha256(body.encode()).hexdigest()}]}))
+            body='---\nname: pdfcraft-example\ndescription: example\n---\n';(folder/'SKILL.md').write_text(body)
+            (root/'scenario-candidates.json').write_text(json.dumps({'status':'local-unreleased','sourcePackage':'full-aigc-skills/pdfcraft-skills','skills':[{'name':'pdfcraft-example','sha256':hashlib.sha256(body.encode()).hexdigest()}]}))
             original=m.ROOT
             try:
                 m.ROOT=root;self.assertEqual(m.validate()['structure'],'PASS')
